@@ -1,7 +1,7 @@
 Templatery
 ==========
 
-__This dokuwiki plugin is no longer maintained. Due to time constraints and no longer using this plugin myself, I can no longer properly maintain it.__
+_This plugin, originally from Brend Wanders, is a general purpose template plugin that has the benefit of being compatible with Strata requests. This is the reason why I reactivated it._
 
 A try at a dokuwiki template plugin. The templatery plugin offers the ability to write
 a template, and have it included in other pages with filled in fields.
