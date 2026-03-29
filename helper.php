@@ -18,8 +18,9 @@ class helper_plugin_templatery extends DokuWiki_Plugin {
      * @return an array containing the resolved page and normalized template id
      */
     public function resolveTemplate($id, &$exists) {
-        list($page, $hash) = explode('#',$id,2);
-        if(empty($hash)) $hash = '';
+        $arr = explode('#',$id,2);
+		$page = $arr[0];
+		$hash = $arr[1]??'';
 
         $hash = $this->cleanTemplateId($hash);
 
@@ -70,8 +71,8 @@ class helper_plugin_templatery extends DokuWiki_Plugin {
      */
     public function prepareTemplate($mode, &$R, $page, $hash, &$error) {
         if($mode == 'metadata') {
-            // add reference for backlinks
-            $R->meta['relation']['references'][$page] = $exists;
+            // add reference for backlinks - FK. $exists not defined, quote out
+            //$R->meta['relation']['references'][$page] = $exists;
 
             // add page to list for cache handling
             if(!isset($R->meta['plugin_templatery'])) {
