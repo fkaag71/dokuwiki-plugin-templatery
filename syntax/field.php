@@ -39,7 +39,7 @@ class syntax_plugin_templatery_field extends DokuWiki_Syntax_Plugin {
 
         preg_match('/@@(.+?)(?:\|(.+?))?@@/msS',$match,$capture);
 
-        return array($capture[1], $capture[2]);
+        return array($capture[1], $capture[2]??'');
     }
 
     public function render($mode, Doku_Renderer $R, $data) {
